@@ -2,6 +2,7 @@
   // import Ad from "$lib/components/ads/Ad.svelte";
   import ArticleHead from "$lib/components/articles/ArticleHead.svelte";
   import { browser } from "$app/environment";
+  import { onMount } from "svelte";
 
   let { data } = $props();
 
@@ -25,8 +26,9 @@
     }
   };
 
-  // Inject the ad after the article content has been rendered
-  setTimeout(injectAd, 2000);
+  onMount(() => {
+    injectAd();
+  });
 </script>
 
 <svelte:head>
