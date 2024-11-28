@@ -43,6 +43,8 @@ export interface ArticleMetadata {
   tags: string[];
   section: string;
   featuredImage?: string;
+  featuredImageAltText?: string;
+  featuredImageCaption?: string;
 }
 
 export interface Article extends HydratedArticleMetadata {

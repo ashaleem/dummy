@@ -26,9 +26,10 @@
 <Footer />
 
 <style>
-  /* @import url("https://fonts.googleapis.com/css2?family=Bokor&family=Pirata+One&display=swap"); */
+  /* @import url("https://fonts.googleapis.com/css2?family=Bokor&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"); */
 
   :global(body) {
+    --main-titlepiece-font: "Georgia", serif;
     --main-serif-font: "Georgia", serif;
     --main-sans-serif-font: Arial, sans-serif;
 
@@ -36,11 +37,16 @@
   }
   :global(h1, h2, h3, h4, h5, h6) {
     font-family: var(--main-serif-font);
+    line-height: 1.1;
   }
-
+  :global(p) {
+    font-family: var(--main-sans-serif-font);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
   main {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 0 1rem;
   }
 </style>

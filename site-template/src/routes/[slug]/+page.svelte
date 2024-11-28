@@ -1,11 +1,12 @@
 <script lang="ts">
   import ArticleCard from "$lib/components/ArticleCard.svelte";
+  import SupportPrompt from "$lib/components/SupportPrompt.svelte";
 
   let { data } = $props();
 </script>
 
 <svelte:head>
-  <title>{data.section} | {data.publication.name}</title>
+  <title>{data.section.label} | {data.publication.name}</title>
   <meta property="og:type" content="article" />
 </svelte:head>
 

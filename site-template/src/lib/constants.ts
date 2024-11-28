@@ -3,14 +3,14 @@
 import type { Author, PublicationDetails } from "./types";
 
 export const PUBLICATION_DETAILS: PublicationDetails = {
-  name: "My Publication",
+  name: "The Daily News",
   description: "A publication about everything",
   yearFounded: 2017,
   url: "https://example.com",
   supportLink: "https://example.com/support",
   logoUrl: "/logo.png",
   emblemUrl:
-    "https://pbs.twimg.com/profile_images/1843210835776114688/Zz8-j1Pj_400x400.jpg",
+    "https://i.pinimg.com/originals/a2/d3/af/a2d3afcd0496f2dff604b6aaa01ed255.jpg",
   faviconUrl: "/favicon.ico",
   sections: [
     { label: "Old Town", slug: "old-town" },

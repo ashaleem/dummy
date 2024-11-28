@@ -22,15 +22,12 @@
       <img src={featuredImage} alt={headline} />
     {/if}
     <h3>{headline}</h3>
-    <p>{description}</p>
+    <div>{description}</div>
     <div>{prettifyDate(publicationDate)}</div>
   </div>
 </a>
 
 <style>
-  .card {
-    max-width: 600px;
-  }
   a {
     text-decoration: none;
     color: inherit;

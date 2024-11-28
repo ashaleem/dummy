@@ -33,8 +33,15 @@
 
 <style>
   header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     text-align: center;
     padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    font-family: var(--main-titlepiece-font);
   }
   nav {
     display: flex;
