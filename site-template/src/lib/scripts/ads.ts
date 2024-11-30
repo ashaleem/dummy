@@ -15,7 +15,7 @@ export const injectAdInArticle = (adImgSrc: string, adImgAlt: string) => {
   const articleElement = document.querySelector("article");
   if (articleElement) {
     const paragraphs = articleElement.querySelectorAll("p");
-    const halfway = Math.floor(paragraphs.length / 2);
+    const halfway = Math.floor(paragraphs.length / 2 - 1);
     if (paragraphs.length > 2) paragraphs[halfway].after(ad);
     else articleElement.append(ad);
   }

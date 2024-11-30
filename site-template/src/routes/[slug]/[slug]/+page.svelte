@@ -5,7 +5,7 @@
   import { makeArticleSchema } from "$lib/scripts/schema.js";
   import ArticleFeaturedImage from "$lib/components/articles/ArticleFeaturedImage.svelte";
   import { injectAdInArticle } from "$lib/scripts/ads.js";
-  import ArticleCard from "$lib/components/ArticleCard.svelte";
+  import ArticleCardGrid from "$lib/components/ArticleCardGrid.svelte";
 
   let { data } = $props();
 
@@ -47,18 +47,7 @@
 
   <!-- <Ad ad={data.ads.banner} /> -->
 
-  <div class="related-articles">
-    <h3>Other articles</h3>
-    {#each data.otherArticles as otherArticle}
-      <ArticleCard
-        headline={otherArticle.title}
-        description={otherArticle.description}
-        path={`/${otherArticle.section}/${otherArticle.slug}`}
-        publicationDate={otherArticle.publicationDate}
-        featuredImage={otherArticle.featuredImage}
-      />
-    {/each}
-  </div>
+  <ArticleCardGrid heading="Related articles" articles={data.otherArticles} />
 </div>
 
 <style>
@@ -68,11 +57,10 @@
     gap: 2rem;
   }
   article {
+    max-width: 800px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
-  h3 {
-    font-size: 1.5rem;
   }
 </style>

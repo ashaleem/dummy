@@ -52,7 +52,7 @@
     margin-bottom: 1rem;
   }
   main {
-    max-width: 800px;
+    max-width: 1300px;
     margin: 2rem auto;
     padding: 0 1rem;
   }

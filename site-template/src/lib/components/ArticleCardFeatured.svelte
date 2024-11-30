@@ -1,31 +1,36 @@
 <script lang="ts">
-  import { prettifyDate } from "$lib/scripts/index";
+  import type { Author } from "$lib/types";
 
   let {
+    link,
     headline,
     description,
-    path,
-    publicationDate,
+    authors,
     featuredImage,
   }: {
+    link: string;
     headline: string;
     description: string;
-    path: string;
-    publicationDate: string;
+    authors?: Author[];
     featuredImage?: string;
   } = $props();
 </script>
 
-<!-- TODO: Better fix for articles not updating on link click -->
-<a data-sveltekit-reload href={path}>
+<a href={link}>
   <div class="card">
     {#if featuredImage}
-      <img src={featuredImage} alt={headline} />
+      <div>
+        <img src={featuredImage} alt={headline} />
+      </div>
     {/if}
     <div class="card-details">
       <h3>{headline}</h3>
       <div>{description}</div>
-      <div class="publication-date">{prettifyDate(publicationDate)}</div>
+      {#if authors}
+        <div class="byline">
+          By {authors.map((author) => author.name).join(", ")}
+        </div>
+      {/if}
     </div>
   </div>
 </a>
@@ -44,12 +49,23 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    justify-content: center;
   }
   h3 {
     font-size: 1.8rem;
   }
-  .publication-date {
+  .byline {
     font-size: 0.9rem;
     font-weight: bold;
+  }
+  img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  @media (min-width: 768px) {
+    .card {
+      flex-direction: row;
+      flex-direction: row-reverse;
+    }
   }
 </style>
