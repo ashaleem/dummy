@@ -5,6 +5,7 @@
   import { makeArticleSchema } from "$lib/scripts/schema.js";
   import ArticleFeaturedImage from "$lib/components/articles/ArticleFeaturedImage.svelte";
   import { injectAdInArticle } from "$lib/scripts/ads.js";
+  import ArticleCard from "$lib/components/ArticleCard.svelte";
 
   let { data } = $props();
 
@@ -50,8 +51,16 @@
   <!-- <Ad ad={data.ads.banner} /> -->
 
   <div class="related-articles">
-    <h3>Related articles</h3>
-    <div>Pending</div>
+    <h3>Other articles</h3>
+    {#each data.otherArticles as otherArticle}
+      <ArticleCard
+        headline={otherArticle.title}
+        description={otherArticle.description}
+        path={`/${otherArticle.section}/${otherArticle.slug}`}
+        publicationDate={otherArticle.publicationDate}
+        featuredImage={otherArticle.featuredImage}
+      />
+    {/each}
   </div>
 </div>
 

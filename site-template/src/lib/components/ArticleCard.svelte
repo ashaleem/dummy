@@ -16,7 +16,8 @@
   } = $props();
 </script>
 
-<a href={path}>
+<!-- TODO: Better fix for articles not updating on link click -->
+<a data-sveltekit-reload href={path}>
   <div class="card">
     {#if featuredImage}
       <img src={featuredImage} alt={headline} />
