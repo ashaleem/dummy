@@ -8,12 +8,10 @@
     message: string;
     link: string;
     linkText: string;
-    image:
-      | {
-          src: string;
-          alt: string;
-        }
-      | undefined;
+    image?: {
+      src: string;
+      alt: string;
+    };
   } = $props();
 </script>
 

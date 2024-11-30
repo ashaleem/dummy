@@ -12,7 +12,7 @@
     description: string;
     path: string;
     publicationDate: string;
-    featuredImage: string | undefined;
+    featuredImage?: string;
   } = $props();
 </script>
 

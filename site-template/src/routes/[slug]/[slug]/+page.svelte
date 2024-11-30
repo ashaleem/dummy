@@ -30,11 +30,8 @@
     <ArticleHead
       title={article.title}
       description={article.description}
-      featuredImage={article.featuredImage}
-      featuredImageAltText={article.featuredImageAltText}
-      featuredImageCaption={article.featuredImageCaption}
-      authors={article.authors}
       publicationDate={article.publicationDate}
+      authors={article.authors}
     />
     {#if article.featuredImage && article.featuredImageAltText}
       <ArticleFeaturedImage

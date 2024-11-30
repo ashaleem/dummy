@@ -5,16 +5,13 @@
   let {
     title,
     description,
-    authors,
     publicationDate,
+    authors,
   }: {
     title: string;
     description: string;
-    featuredImage: string | undefined;
-    featuredImageAltText: string | undefined;
-    featuredImageCaption: string | undefined;
-    authors: Author[] | undefined;
     publicationDate: string;
+    authors?: Author[];
   } = $props();
 </script>
 
