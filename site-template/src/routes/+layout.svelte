@@ -9,6 +9,10 @@
   const { publication, ads } = data;
 </script>
 
+<svelte:head>
+  <link rel="icon" href={data.publication.faviconUrl} />
+</svelte:head>
+
 <Header
   publicationName={publication.name}
   navigation={publication.navigation}

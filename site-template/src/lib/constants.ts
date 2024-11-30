@@ -12,7 +12,8 @@ export const PUBLICATION_DETAILS: PublicationDetails = {
   logoUrl: "/logo.png",
   emblemUrl:
     "https://i.pinimg.com/originals/a2/d3/af/a2d3afcd0496f2dff604b6aaa01ed255.jpg",
-  faviconUrl: "/favicon.ico",
+  faviconUrl:
+    "https://i.pinimg.com/originals/a2/d3/af/a2d3afcd0496f2dff604b6aaa01ed255.jpg",
   sections: [
     { label: "Old Town", slug: "old-town" },
     { label: "New Town", slug: "new-town" },
