@@ -11,9 +11,12 @@
 
   const { article } = $derived(data);
 
-  onMount(() => {
-    const adImgSrc = data.ads.banner.img;
-    const adAltText = `Advertisement for ${data.ads.banner.name}`;
+  const adImgSrc = data.ads.banner.img;
+  const adAltText = `Advertisement for ${data.ads.banner.name}`;
+
+  $effect(() => {
+    // Nasty workaround as I think article needs to be used for the effect to run
+    console.log("Data changed. Slug now is", article.slug);
     injectAdInArticle(adImgSrc, adAltText);
   });
 </script>
