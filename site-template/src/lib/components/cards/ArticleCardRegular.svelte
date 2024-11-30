@@ -1,5 +1,6 @@
 <script lang="ts">
   import { prettifyDate } from "$lib/scripts/index";
+  import ArticleCardImage from "./ArticleCardImage.svelte";
 
   let {
     headline,
@@ -20,7 +21,7 @@
 <a data-sveltekit-reload href={path}>
   <div class="card">
     {#if featuredImage}
-      <img src={featuredImage} alt={headline} />
+      <ArticleCardImage src={featuredImage} alt={headline} />
     {/if}
     <div class="card-details">
       <h3>{headline}</h3>

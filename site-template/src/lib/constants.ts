@@ -43,4 +43,9 @@ export const AUTHORS: Author[] = [
     name: "J. W. Marceau",
     bio: "J. W. Marceau means well.",
   },
+  {
+    id: "tintin",
+    name: "Tintin",
+    bio: "Tintin is a reporter and adventurer.",
+  },
 ];

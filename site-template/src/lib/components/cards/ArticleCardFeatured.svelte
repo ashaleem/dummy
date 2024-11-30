@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Author } from "$lib/types";
+  import ArticleCardImage from "./ArticleCardImage.svelte";
 
   let {
     link,
@@ -20,7 +21,7 @@
   <div class="card">
     {#if featuredImage}
       <div>
-        <img src={featuredImage} alt={headline} />
+        <ArticleCardImage src={featuredImage} alt={headline} />
       </div>
     {/if}
     <div class="card-details">
@@ -57,10 +58,6 @@
   .byline {
     font-size: 0.9rem;
     font-weight: bold;
-  }
-  img {
-    max-width: 100%;
-    border-radius: 5px;
   }
   @media (min-width: 768px) {
     .card {

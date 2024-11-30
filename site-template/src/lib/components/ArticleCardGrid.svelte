@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { ArticleMetadata } from "$lib/types";
-  import ArticleCard from "./ArticleCard.svelte";
+  import ArticleCard from "./cards/ArticleCardRegular.svelte";
 
   let { heading, articles }: { heading?: string; articles: ArticleMetadata[] } =
     $props();
