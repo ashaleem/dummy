@@ -1,34 +1,19 @@
 <script lang="ts">
   // import Ad from "$lib/components/ads/Ad.svelte";
   import ArticleHead from "$lib/components/articles/ArticleHead.svelte";
-  import { browser } from "$app/environment";
   import { onMount } from "svelte";
   import { makeArticleSchema } from "$lib/scripts/schema.js";
+  import ArticleFeaturedImage from "$lib/components/articles/ArticleFeaturedImage.svelte";
+  import { injectAdInArticle } from "$lib/scripts/ads.js";
 
   let { data } = $props();
 
   const article = data.article;
 
-  const adHTML = `<aside style="border: 2px solid black; position: relative; margin: 2rem 0;">
-    <div class="ad-label" style="font-size: 0.8rem; position: absolute; top: -23px; right: -2px; background-color: black; color: white; padding: 0.1rem 0.5rem; border-radius: 5px 5px 0 0;">Advertisement</div>
-    <img src=${data.ads.banner.img} alt=${data.ads.banner.name}} style="width: 100%; max-width: 800px; margin: 0 auto;">
-  </aside>`;
-
-  const injectAd = () => {
-    if (!browser) return;
-    const ad = document.createElement("div");
-    ad.innerHTML = adHTML;
-    const articleElement = document.querySelector("article");
-    if (articleElement) {
-      const paragraphs = articleElement.querySelectorAll("p");
-      const halfway = Math.floor(paragraphs.length / 2);
-      if (paragraphs.length > 2) paragraphs[halfway].after(ad);
-      else articleElement.append(ad);
-    }
-  };
-
   onMount(() => {
-    injectAd();
+    const adImgSrc = data.ads.banner.img;
+    const adAltText = `Advertisement for ${data.ads.banner.name}`;
+    injectAdInArticle(adImgSrc, adAltText);
   });
 </script>
 
@@ -50,6 +35,13 @@
       authors={article.authors}
       publicationDate={article.publicationDate}
     />
+    {#if article.featuredImage && article.featuredImageAltText}
+      <ArticleFeaturedImage
+        src={article.featuredImage}
+        altText={article.featuredImageAltText}
+        caption={article.featuredImageCaption}
+      />
+    {/if}
     <div>
       {@html article.content}
     </div>

@@ -1,5 +1,6 @@
 export interface PublicationDetails {
   name: string;
+  parentOrganization: string;
   description: string;
   yearFounded: number;
   url: string;

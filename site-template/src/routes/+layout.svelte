@@ -23,7 +23,10 @@
 <!-- <Ad ad={ads.sideA} />
 <Ad ad={ads.sideB} /> -->
 
-<Footer />
+<Footer
+  yearFounded={publication.yearFounded}
+  parentOrg={publication.parentOrganization}
+/>
 
 <style>
   /* @import url("https://fonts.googleapis.com/css2?family=Bokor&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"); */

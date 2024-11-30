@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { PUBLICATION_DETAILS } from "$lib/constants";
+  let { yearFounded, parentOrg }: { yearFounded: number; parentOrg: string } =
+    $props();
 </script>
 
 <footer>
   <div>
-    © {PUBLICATION_DETAILS.yearFounded} - {new Date().getFullYear()}
-    {PUBLICATION_DETAILS.name}
+    © {yearFounded} - {new Date().getFullYear()} • {parentOrg}
   </div>
   <div class="gonzo-plug">
     Powered by <a href="https://gonzo.engineering">Gonzo Engineering</a>

@@ -4,6 +4,7 @@ import type { Author, PublicationDetails } from "./types";
 
 export const PUBLICATION_DETAILS: PublicationDetails = {
   name: "The Daily News",
+  parentOrganization: "The News Company",
   description: "A publication about everything",
   yearFounded: 2017,
   url: "https://example.com",
