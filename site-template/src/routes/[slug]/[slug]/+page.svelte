@@ -1,7 +1,6 @@
 <script lang="ts">
   // import Ad from "$lib/components/ads/Ad.svelte";
   import ArticleHead from "$lib/components/articles/ArticleHead.svelte";
-  import { onMount } from "svelte";
   import { makeArticleSchema } from "$lib/scripts/schema.js";
   import ArticleFeaturedImage from "$lib/components/articles/ArticleFeaturedImage.svelte";
   import { injectAdInArticle } from "$lib/scripts/ads.js";
@@ -11,13 +10,11 @@
 
   const { article } = $derived(data);
 
-  const adImgSrc = data.ads.banner.img;
-  const adAltText = `Advertisement for ${data.ads.banner.name}`;
-
   $effect(() => {
-    // Nasty workaround as I think article needs to be used for the effect to run
-    console.log("Data changed. Slug now is", article.slug);
-    injectAdInArticle(adImgSrc, adAltText);
+    injectAdInArticle(
+      data.ads.banner.img,
+      `Advertisement for ${data.ads.banner.name}`
+    );
   });
 </script>
 
