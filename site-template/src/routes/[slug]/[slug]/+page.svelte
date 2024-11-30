@@ -9,7 +9,7 @@
 
   let { data } = $props();
 
-  const article = data.article;
+  const { article } = $derived(data);
 
   onMount(() => {
     const adImgSrc = data.ads.banner.img;
@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-  <title>{article?.title} | {data.publication.name}</title>
+  <title>{article.title} | {data.publication.name}</title>
   <meta property="og:type" content="article" />
 </svelte:head>
 
