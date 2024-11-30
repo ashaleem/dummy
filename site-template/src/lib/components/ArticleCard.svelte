@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { prettifyDate } from "$lib/utils";
+  import { prettifyDate } from "$lib/scripts/index";
 
   let {
     headline,

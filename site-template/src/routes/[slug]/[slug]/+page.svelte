@@ -3,6 +3,7 @@
   import ArticleHead from "$lib/components/articles/ArticleHead.svelte";
   import { browser } from "$app/environment";
   import { onMount } from "svelte";
+  import { makeArticleSchema } from "$lib/scripts/schema.js";
 
   let { data } = $props();
 
@@ -35,6 +36,8 @@
   <title>{article?.title} | {data.publication.name}</title>
   <meta property="og:type" content="article" />
 </svelte:head>
+
+{@html `<script type="application/ld+json">${JSON.stringify(makeArticleSchema(data.publication, article))}</script>`}
 
 <div class="container">
   <article>

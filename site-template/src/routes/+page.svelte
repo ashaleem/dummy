@@ -1,15 +1,17 @@
 <script lang="ts">
   import ArticleCard from "$lib/components/ArticleCard.svelte";
   import SupportPrompt from "$lib/components/SupportPrompt.svelte";
-  import { PUBLICATION_DETAILS } from "$lib/constants";
+  import { makePublicationSchema } from "$lib/scripts/schema.js";
 
   let { data } = $props();
 </script>
 
 <svelte:head>
-  <title>{PUBLICATION_DETAILS.name}</title>
-  <meta name="description" content={PUBLICATION_DETAILS.description} />
+  <title>{data.publication.name}</title>
+  <meta name="description" content={data.publication.description} />
 </svelte:head>
+
+{@html `<script type="application/ld+json">${JSON.stringify(makePublicationSchema(data.publication))}</script>`}
 
 <div class="container">
   {#each data.articles as article}

@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Author } from "$lib/types";
-  import { prettifyDate } from "$lib/utils";
+  import { prettifyDate } from "$lib/scripts";
 
   let {
     title,
