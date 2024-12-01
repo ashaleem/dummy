@@ -20,7 +20,7 @@
 <a href={link}>
   <div class="card">
     {#if featuredImage}
-      <div>
+      <div class="card-image">
         <ArticleCardImage src={featuredImage} alt={headline} />
       </div>
     {/if}
@@ -47,10 +47,14 @@
     gap: 1rem;
   }
   .card-details {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     justify-content: center;
+  }
+  .card-image {
+    flex: 2;
   }
   h3 {
     font-size: 1.8rem;
