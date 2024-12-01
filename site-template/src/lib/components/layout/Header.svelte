@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { NavSection } from "$lib/types";
+  import HeaderLink from "./HeaderLink.svelte";
   let {
     publicationName,
     navigation,
@@ -15,7 +16,7 @@
     <ul>
       {#each navigation as { label, url, subNav }}
         <li>
-          <a href={url}>{label}</a>
+          <HeaderLink title={label} href={url} />
           {#if subNav}
             <ul class="sub-nav">
               {#each subNav as { label, url }}

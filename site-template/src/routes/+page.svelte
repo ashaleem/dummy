@@ -9,9 +9,8 @@
 <svelte:head>
   <title>{data.publication.name}</title>
   <meta name="description" content={data.publication.description} />
+  {@html `<script type="application/ld+json">${JSON.stringify(makePublicationSchema(data.publication))}</script>`}
 </svelte:head>
-
-{@html `<script type="application/ld+json">${JSON.stringify(makePublicationSchema(data.publication))}</script>`}
 
 <FrontBasic articles={data.articles} />
 

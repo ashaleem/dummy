@@ -35,7 +35,12 @@ export const makeArticleSchema = (
     image: article.featuredImage,
     datePublished: article.publicationDate,
     description: article.description,
-    author: article.authors?.map((author) => author.name),
+    author: article.authors?.map((author) => {
+      return {
+        "@type": "Person",
+        name: author.name,
+      };
+    }),
     publisher: {
       "@type": "Organization",
       name: publicationDetails.name,

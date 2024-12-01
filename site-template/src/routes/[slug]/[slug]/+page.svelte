@@ -21,9 +21,8 @@
 <svelte:head>
   <title>{article.title} | {data.publication.name}</title>
   <meta property="og:type" content="article" />
+  {@html `<script type="application/ld+json">${JSON.stringify(makeArticleSchema(data.publication, article))}</script>`}
 </svelte:head>
-
-{@html `<script type="application/ld+json">${JSON.stringify(makeArticleSchema(data.publication, article))}</script>`}
 
 <div class="container">
   <article>
