@@ -22,5 +22,10 @@
   }
   .gonzo-plug {
     font-size: 0.8rem;
+    a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: bold;
+    }
   }
 </style>
