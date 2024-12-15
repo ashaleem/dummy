@@ -1,0 +1,228 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "name": "internal",
+    "src": ".svelte-kit/generated/server/internal.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js"
+    ]
+  },
+  "_ArticleCardGrid.js": {
+    "file": "chunks/ArticleCardGrid.js",
+    "name": "ArticleCardGrid",
+    "imports": [
+      "_index2.js"
+    ],
+    "css": [
+      "_app/immutable/assets/ArticleCardGrid.DLdwj75d.css"
+    ]
+  },
+  "_FrontBasic.js": {
+    "file": "chunks/FrontBasic.js",
+    "name": "FrontBasic",
+    "imports": [
+      "_index2.js",
+      "_ArticleCardGrid.js"
+    ],
+    "css": [
+      "_app/immutable/assets/FrontBasic.B0zqQd7e.css"
+    ]
+  },
+  "_constants.js": {
+    "file": "chunks/constants.js",
+    "name": "constants"
+  },
+  "_figurative-coruption-probes-to-be-replaced-with-very-real-anal-probes.js": {
+    "file": "chunks/figurative-coruption-probes-to-be-replaced-with-very-real-anal-probes.js",
+    "name": "figurative-coruption-probes-to-be-replaced-with-very-real-anal-probes",
+    "isDynamicEntry": true
+  },
+  "_index.js": {
+    "file": "chunks/index.js",
+    "name": "index"
+  },
+  "_index2.js": {
+    "file": "chunks/index2.js",
+    "name": "index"
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "name": "internal",
+    "imports": [
+      "_index2.js"
+    ]
+  },
+  "_local-man-mistakes-being-bright-for-being-exceptional.js": {
+    "file": "chunks/local-man-mistakes-being-bright-for-being-exceptional.js",
+    "name": "local-man-mistakes-being-bright-for-being-exceptional",
+    "isDynamicEntry": true
+  },
+  "_man-bites-dog.js": {
+    "file": "chunks/man-bites-dog.js",
+    "name": "man-bites-dog",
+    "isDynamicEntry": true
+  },
+  "_person-learns-from-mistake.js": {
+    "file": "chunks/person-learns-from-mistake.js",
+    "name": "person-learns-from-mistake",
+    "isDynamicEntry": true
+  },
+  "_schema.js": {
+    "file": "chunks/schema.js",
+    "name": "schema"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "name": "index",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js",
+      "_index.js"
+    ]
+  },
+  "src/routes/+error.svelte": {
+    "file": "entries/pages/_error.svelte.js",
+    "name": "entries/pages/_error.svelte",
+    "src": "src/routes/+error.svelte",
+    "isEntry": true
+  },
+  "src/routes/+layout.server.ts": {
+    "file": "entries/pages/_layout.server.ts.js",
+    "name": "entries/pages/_layout.server.ts",
+    "src": "src/routes/+layout.server.ts",
+    "isEntry": true
+  },
+  "src/routes/+layout.svelte": {
+    "file": "entries/pages/_layout.svelte.js",
+    "name": "entries/pages/_layout.svelte",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.Db17ZZ4E.css"
+    ]
+  },
+  "src/routes/+page.server.ts": {
+    "file": "entries/pages/_page.server.ts.js",
+    "name": "entries/pages/_page.server.ts",
+    "src": "src/routes/+page.server.ts",
+    "isEntry": true
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "name": "entries/pages/_page.svelte",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_FrontBasic.js",
+      "_schema.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.BdYCDkl-.css"
+    ]
+  },
+  "src/routes/[slug]/+page.server.ts": {
+    "file": "entries/pages/_slug_/_page.server.ts.js",
+    "name": "entries/pages/_slug_/_page.server.ts",
+    "src": "src/routes/[slug]/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/[slug]/+page.svelte": {
+    "file": "entries/pages/_slug_/_page.svelte.js",
+    "name": "entries/pages/_slug_/_page.svelte",
+    "src": "src/routes/[slug]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_FrontBasic.js"
+    ]
+  },
+  "src/routes/[slug]/[slug]/+page.server.ts": {
+    "file": "entries/pages/_slug_/_slug_/_page.server.ts.js",
+    "name": "entries/pages/_slug_/_slug_/_page.server.ts",
+    "src": "src/routes/[slug]/[slug]/+page.server.ts",
+    "isEntry": true
+  },
+  "src/routes/[slug]/[slug]/+page.svelte": {
+    "file": "entries/pages/_slug_/_slug_/_page.svelte.js",
+    "name": "entries/pages/_slug_/_slug_/_page.svelte",
+    "src": "src/routes/[slug]/[slug]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_ArticleCardGrid.js",
+      "_schema.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.BDejTDDW.css"
+    ]
+  },
+  "src/routes/api/ads/+server.ts": {
+    "file": "entries/endpoints/api/ads/_server.ts.js",
+    "name": "entries/endpoints/api/ads/_server.ts",
+    "src": "src/routes/api/ads/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/api/articles/+server.ts": {
+    "file": "entries/endpoints/api/articles/_server.ts.js",
+    "name": "entries/endpoints/api/articles/_server.ts",
+    "src": "src/routes/api/articles/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_figurative-coruption-probes-to-be-replaced-with-very-real-anal-probes.js",
+      "_local-man-mistakes-being-bright-for-being-exceptional.js",
+      "_man-bites-dog.js",
+      "_person-learns-from-mistake.js",
+      "_index.js",
+      "_constants.js"
+    ]
+  },
+  "src/routes/api/articles/[slug]/+server.ts": {
+    "file": "entries/endpoints/api/articles/_slug_/_server.ts.js",
+    "name": "entries/endpoints/api/articles/_slug_/_server.ts",
+    "src": "src/routes/api/articles/[slug]/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_constants.js",
+      "_index.js",
+      "_index2.js"
+    ],
+    "dynamicImports": [
+      "_figurative-coruption-probes-to-be-replaced-with-very-real-anal-probes.js",
+      "_local-man-mistakes-being-bright-for-being-exceptional.js",
+      "_man-bites-dog.js",
+      "_person-learns-from-mistake.js"
+    ]
+  },
+  "src/routes/api/authors/+server.ts": {
+    "file": "entries/endpoints/api/authors/_server.ts.js",
+    "name": "entries/endpoints/api/authors/_server.ts",
+    "src": "src/routes/api/authors/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_constants.js",
+      "_index.js"
+    ]
+  },
+  "src/routes/api/publication-details/+server.ts": {
+    "file": "entries/endpoints/api/publication-details/_server.ts.js",
+    "name": "entries/endpoints/api/publication-details/_server.ts",
+    "src": "src/routes/api/publication-details/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_constants.js",
+      "_index.js"
+    ]
+  }
+}

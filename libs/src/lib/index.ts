@@ -1,3 +1,14 @@
+import { makeArticleSchema, makePublicationSchema } from "./scripts/schema.js";
+import { injectAdInArticle } from "./scripts/ads.js";
+import { prettifyDate } from "./scripts/helpers.js";
+
+export {
+  makePublicationSchema,
+  makeArticleSchema,
+  injectAdInArticle,
+  prettifyDate,
+};
+
 export interface PublicationDetails {
   name: string;
   parentOrganization: string;

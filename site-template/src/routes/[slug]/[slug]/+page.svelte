@@ -1,10 +1,14 @@
 <script lang="ts">
   // import Ad from "$lib/components/ads/Ad.svelte";
-  import ArticleHead from "$lib/components/articles/ArticleHead.svelte";
-  import { makeArticleSchema } from "$lib/scripts/schema.js";
-  import ArticleFeaturedImage from "$lib/components/articles/ArticleFeaturedImage.svelte";
-  import { injectAdInArticle } from "$lib/scripts/ads.js";
-  import ArticleCardGrid from "$lib/components/ArticleCardGrid.svelte";
+  import {
+    ArticleCardGrid,
+    ArticleFeaturedImage,
+    ArticleHead,
+  } from "@gonzo-engineering/dummy-ui";
+  import {
+    injectAdInArticle,
+    makeArticleSchema,
+  } from "@gonzo-engineering/libs";
 
   let { data } = $props();
 

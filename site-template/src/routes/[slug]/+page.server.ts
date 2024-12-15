@@ -1,4 +1,7 @@
-import type { ArticleMetadata, PublicationDetails } from "$lib/types/index.js";
+import type {
+  ArticleMetadata,
+  PublicationDetails,
+} from "@gonzo-engineering/libs";
 import { error } from "@sveltejs/kit";
 
 export async function load({ fetch, params }) {

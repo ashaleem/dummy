@@ -1,4 +1,4 @@
-import type { Ad, PublicationDetails } from "$lib/types";
+import type { Ad, PublicationDetails } from "@gonzo-engineering/libs";
 
 export async function load({ fetch }) {
   // Publication details
