@@ -1,6 +1,6 @@
 // import type { Author } from "$lib/types/index.js";
 import { AUTHORS } from "$lib/constants.js";
-import type { Article } from "$lib/types/index.js";
+import type { Article } from "$lib/types";
 import { json } from "@sveltejs/kit";
 import { render } from "svelte/server";
 

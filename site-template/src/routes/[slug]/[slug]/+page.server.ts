@@ -1,4 +1,4 @@
-import type { Article, ArticleMetadata } from "$lib/types";
+import type { Article, ArticleMetadata } from "@gonzo-engineering/libs";
 
 export const load = async ({ fetch, params, url }) => {
   const articleResponse = await fetch(`/api/articles/${params.slug}`);
