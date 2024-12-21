@@ -1,7 +1,5 @@
-import type {
-  HydratedArticleMetadata,
-  PublicationDetails,
-} from "$lib/index.js";
+import type { ArticleMetadata } from "$lib/types/content.js";
+import type { PublicationDetails } from "$lib/types/publication.js";
 
 export const makePublicationSchema = (
   publicationDetails: PublicationDetails
@@ -25,7 +23,7 @@ export const makePublicationSchema = (
 
 export const makeArticleSchema = (
   publicationDetails: PublicationDetails,
-  article: HydratedArticleMetadata
+  article: ArticleMetadata
 ) => {
   return {
     "@context": "https://schema.org",
@@ -52,6 +50,6 @@ export const makeArticleSchema = (
         url: publicationDetails.logoUrl,
       },
     },
-    keywords: article.tags.join(", "),
+    keywords: article.tags?.join(", "),
   };
 };

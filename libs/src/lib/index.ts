@@ -1,76 +1,24 @@
 import { makeArticleSchema, makePublicationSchema } from "./scripts/schema.js";
 import { injectAdInArticle } from "./scripts/ads.js";
 import { prettifyDate } from "./scripts/helpers.js";
+import type { Ad } from "./types/ads.js";
+import type { Article, ArticleMetadata, Author } from "./types/content.js";
+import type {
+  NavSection,
+  PublicationDetails,
+  SiteSection,
+} from "./types/publication.js";
 
 export {
   makePublicationSchema,
   makeArticleSchema,
   injectAdInArticle,
   prettifyDate,
+  type Ad,
+  type Article,
+  type ArticleMetadata,
+  type Author,
+  type PublicationDetails,
+  type SiteSection,
+  type NavSection,
 };
-
-export interface PublicationDetails {
-  name: string;
-  parentOrganization: string;
-  description: string;
-  yearFounded: number;
-  url: string;
-  supportLink: string;
-  logoUrl: string;
-  emblemUrl: string;
-  faviconUrl: string;
-  sections: Section[];
-  navigation: NavSection[];
-}
-
-export interface Section {
-  label: string;
-  slug: string;
-}
-
-export interface NavSection {
-  label: string;
-  url: string;
-  subNav?: NavLink[];
-}
-
-interface NavLink {
-  label: string;
-  url: string;
-}
-
-export interface RawArticleMetadata extends ArticleMetadata {
-  authorIds?: string[];
-}
-
-export interface HydratedArticleMetadata extends ArticleMetadata {
-  authors?: Author[];
-}
-
-export interface ArticleMetadata {
-  slug: string;
-  title: string;
-  description: string;
-  publicationDate: string;
-  tags: string[];
-  section: string;
-  featuredImage?: string;
-  featuredImageAltText?: string;
-  featuredImageCaption?: string;
-}
-
-export interface Article extends HydratedArticleMetadata {
-  content: string;
-}
-
-export interface Author {
-  id: string;
-  name: string;
-  bio?: string;
-}
-
-export interface Ad {
-  name: string;
-  img: string;
-  url: string;
-}
