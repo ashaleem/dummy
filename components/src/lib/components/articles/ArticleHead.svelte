@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/styles/reset.css';
 	import { type Author, prettifyDate } from '@gonzo-engineering/libs';
 
 	let {

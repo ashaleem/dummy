@@ -1,9 +1,10 @@
 <script lang="ts">
-	import type { HydratedArticleMetadata } from '@gonzo-engineering/libs';
+	import '$lib/styles/reset.css';
+	import type { ArticleMetadata } from '@gonzo-engineering/libs';
 	import ArticleCardGrid from '../ArticleCardGrid.svelte';
 	import ArticleCardFeatured from '../cards/ArticleCardFeatured.svelte';
 
-	let { heading, articles }: { heading?: string; articles: HydratedArticleMetadata[] } = $props();
+	let { heading, articles }: { heading?: string; articles: ArticleMetadata[] } = $props();
 
 	const mostRecentArticle = articles[0];
 	const allOtherArticles = articles.slice(1);

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/styles/reset.css';
 	import type { ArticleMetadata } from '@gonzo-engineering/libs';
 	import ArticleCard from './cards/ArticleCardRegular.svelte';
 

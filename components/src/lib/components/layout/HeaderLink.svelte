@@ -1,4 +1,6 @@
 <script lang="ts">
+	import '$lib/styles/reset.css';
+
 	let {
 		title,
 		href

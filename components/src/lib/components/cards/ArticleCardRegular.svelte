@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/styles/reset.css';
 	import { prettifyDate } from '@gonzo-engineering/libs';
 	import ArticleCardImage from './ArticleCardImage.svelte';
 
@@ -10,7 +11,7 @@
 		featuredImage
 	}: {
 		headline: string;
-		description: string;
+		description?: string;
 		path: string;
 		publicationDate: string;
 		featuredImage?: string;
@@ -24,7 +25,9 @@
 		{/if}
 		<div class="card-details">
 			<h3>{headline}</h3>
-			<div>{description}</div>
+			{#if description}
+				<div>{description}</div>
+			{/if}
 			<div class="publication-date">{prettifyDate(publicationDate)}</div>
 		</div>
 	</div>

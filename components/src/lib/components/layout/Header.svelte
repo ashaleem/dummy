@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/styles/reset.css';
 	import type { NavSection } from '@gonzo-engineering/libs';
 	import HeaderLink from './HeaderLink.svelte';
 	let {

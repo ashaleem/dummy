@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/styles/reset.css';
 	import type { Ad } from '@gonzo-engineering/libs';
 
 	const { ad }: { ad: Ad } = $props();

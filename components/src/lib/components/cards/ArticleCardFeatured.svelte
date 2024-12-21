@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '$lib/styles/reset.css';
 	import type { Author } from '@gonzo-engineering/libs';
 	import ArticleCardImage from './ArticleCardImage.svelte';
 
@@ -11,7 +12,7 @@
 	}: {
 		link: string;
 		headline: string;
-		description: string;
+		description?: string;
 		authors?: Author[];
 		featuredImage?: string;
 	} = $props();
@@ -26,7 +27,9 @@
 		{/if}
 		<div class="card-details">
 			<h3>{headline}</h3>
-			<div>{description}</div>
+			{#if description}
+				<div>{description}</div>
+			{/if}
 			{#if authors}
 				<div class="byline">
 					By {authors.map((author) => author.name).join(', ')}
