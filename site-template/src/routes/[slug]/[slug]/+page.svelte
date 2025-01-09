@@ -32,7 +32,7 @@
   <article>
     <ArticleHead
       title={article.title}
-      description={article.description}
+      description={article.description ? article.description : ""}
       publicationDate={article.publicationDate}
       authors={article.authors}
     />
