@@ -8,7 +8,21 @@
 <svelte:head>
   <title>{data.publication.name}</title>
   <meta name="description" content={data.publication.description} />
+  <script
+    src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+  ></script>
   {@html `<script type="application/ld+json">${JSON.stringify(makePublicationSchema(data.publication))}</script>`}
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </svelte:head>
 
 <FrontBasic articles={data.articles} />

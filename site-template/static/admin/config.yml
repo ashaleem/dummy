@@ -1,0 +1,35 @@
+# when using the default proxy server port
+# local_backend: true
+
+local_backend:
+  # when using a custom proxy server port
+  url: http://localhost:8082/api/v1
+  # when accessing the local site from a host other than 'localhost' or '127.0.0.1'
+  allowed_hosts: ['192.168.0.1']
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images"
+public_folder: "/images/"
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    folder: "src/data/articles" 
+    create: true
+    # slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Featured image", name: "featuredImage", widget: "image" }
+      - { label: "Featured image alt text", name: "featuredImageAltText", widget: "string" }
+      - { label: "Featured image caption", name: "featuredImageCaption", widget: "string" }
+      - { label: "Publication date", name: "publicationDate", widget: "datetime" }
+      - { label: "Author IDs", name: "authorIds", widget: "list", fields: [{label: "Author ID", name: "authorId", widget: "string"}] }
+      - { label: "Section", name: "section", widget: "select", options: ["new-town", "business-district", "old-town"] }
+      - { label: "Tags", name: "tags", widget: "list", fields: [{label: "Tag", name: "tag", widget: "string"}] }
+      - { label: "Body", name: "body", widget: "markdown" }
