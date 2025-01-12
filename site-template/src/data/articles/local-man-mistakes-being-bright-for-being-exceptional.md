@@ -5,9 +5,9 @@ description: The truth is painful sometimes
 featuredImage: https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Havana_-_Cuba_-_Man_giving_a_V_sign_-_1326.jpg/1024px-Havana_-_Cuba_-_Man_giving_a_V_sign_-_1326.jpg
 featuredImageAltText: Man making a V sign
 featuredImageCaption: "Credit: Associated Press"
-publicationDate: "2024-11-01T12:28:00.000Z"
-authorIds:
-  - tintin
+publicationDate: 2024-11-01T12:28:00.000Z
+authors:
+  - slug: tintin
 section: new-town
 tags:
   - news

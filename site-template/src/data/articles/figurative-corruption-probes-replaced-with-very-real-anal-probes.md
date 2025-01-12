@@ -5,9 +5,9 @@ description: Going forward enquiries are going to be a lot more… hands on
 featuredImage: https://images.pexels.com/photos/6627783/pexels-photo-6627783.jpeg
 featuredImageAltText: Someone putting on a rubber glove
 featuredImageCaption: "Law enforcement has been told to take ‘an Ice Cube approach' to lubrication"
-publicationDate: "2024-11-17T12:28:00.000Z"
-authorIds:
-  - j-w-marceau
+publicationDate: 2024-11-17T12:28:00.000Z
+authors:
+  - slug: j-w-marceau
 section: business-district
 tags:
   - news

@@ -5,9 +5,9 @@ description: Park goers were appalled to witness a tussle for a tennis ball go s
 featuredImage: https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sad_eyes%5E_Explore_March_18%2C_2023_-_Flickr_-_Dog_Light_Photography.jpg/1024px-Sad_eyes%5E_Explore_March_18%2C_2023_-_Flickr_-_Dog_Light_Photography.jpg
 featuredImageAltText: A terribly sad looking dog
 featuredImageCaption: "Credit: Associated Press"
-publicationDate: "2024-11-27T12:28:00.000Z"
-authorIds:
-  - j-w-marceau
+publicationDate: 2024-11-27T12:28:00.000Z
+authors:
+  - slug: j-w-marceau
 section: new-town
 tags:
   - news

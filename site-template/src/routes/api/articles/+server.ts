@@ -1,9 +1,9 @@
 import { json } from "@sveltejs/kit";
-import type { HydratedArticleMetadata, RawArticleMetadata } from "$lib/types";
-import { AUTHORS } from "$lib/constants";
+import type { ArticleMetadata } from "@gonzo-engineering/libs";
+import { allAuthors } from "../../../data/authors/allAuthors";
 
 async function getPosts() {
-  let rawPosts: RawArticleMetadata[] = [];
+  let rawPosts: ArticleMetadata[] = [];
 
   const paths = import.meta.glob("/src/data/articles/*.md", { eager: true });
 
@@ -12,8 +12,7 @@ async function getPosts() {
     const slug = path.split("/").at(-1)?.replace(".md", "");
 
     if (file && typeof file === "object" && "metadata" in file && slug) {
-      const metadata = file.metadata as Omit<RawArticleMetadata, "slug">;
-      const post = { ...metadata, slug } satisfies RawArticleMetadata;
+      const post = file.metadata as ArticleMetadata;
       rawPosts.push(post);
     }
   }
@@ -24,19 +23,26 @@ async function getPosts() {
       new Date(first.publicationDate).getTime()
   );
 
-  // @ts-expect-error -- God knows
-  const postsWithAuthorObjects: HydratedArticleMetadata[] = rawPosts.map(
-    (post) => {
-      // Replace author IDs with author objects
-      const authorObjects = post.authorIds?.map((authorId: string) => {
-        return AUTHORS.find((author) => author.id === authorId);
-      });
-      return {
-        ...post,
-        authors: authorObjects,
-      };
-    }
-  );
+  const postsWithAuthorObjects: ArticleMetadata[] = rawPosts.map((post) => {
+    // Replace author IDs with author objects
+    const authorObjects = post.authors?.map(
+      (rawAuthorObject: { slug: string }) => {
+        const matchingAuthor = allAuthors.find(
+          (author) => author.slug === rawAuthorObject.slug
+        );
+        if (!matchingAuthor) {
+          throw new Error(
+            `Author with slug ${rawAuthorObject.slug} not found in authors data`
+          );
+        }
+        return matchingAuthor;
+      }
+    );
+    return {
+      ...post,
+      authors: authorObjects,
+    };
+  });
 
   return postsWithAuthorObjects;
 }

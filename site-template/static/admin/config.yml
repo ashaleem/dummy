@@ -20,16 +20,26 @@ collections:
     folder: "src/data/articles" 
     create: true
     # slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    slug: "{{slug}}"
+    slug: "{{fields.slug}}"
     fields:
-      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "Sets the url e.g. yoursite.com/section/**your-slug-here**" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Featured image", name: "featuredImage", widget: "image" }
       - { label: "Featured image alt text", name: "featuredImageAltText", widget: "string" }
       - { label: "Featured image caption", name: "featuredImageCaption", widget: "string" }
       - { label: "Publication date", name: "publicationDate", widget: "datetime" }
-      - { label: "Author IDs", name: "authorIds", widget: "list", fields: [{label: "Author ID", name: "authorId", widget: "string"}] }
+      - { label: "Authors", name: "authors", widget: "list", fields: [{ label: "Author", name: "slug", widget: "relation", collection: "authors", searchFields: ["name"], valueField: "slug" }] }
       - { label: "Section", name: "section", widget: "select", options: ["new-town", "business-district", "old-town"] }
       - { label: "Tags", name: "tags", widget: "list", fields: [{label: "Tag", name: "tag", widget: "string"}] }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "authors"
+    label: "Authors"
+    folder: "src/data/authors"
+    create: true
+    slug: "{{fields.slug}}"
+    format: "json"
+    fields:
+      - { label: "ID", name: "slug", widget: "string", hint: "Unique author identifier, also sets the author page url e.g. yoursite.com/authors/**author-id**" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "markdown", required: false }

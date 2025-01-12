@@ -2,9 +2,9 @@
 slug: person-learns-from-mistake
 title: Person learns from mistake
 description: A humble local carpenter made history yesterday by becoming the first human this millennia to genuinely learn from an error
-publicationDate: "2024-09-27T12:28:00.000Z"
-authorIds:
-  - j-w-marceau
+publicationDate: 2024-09-27T12:28:00.000Z
+authors:
+  - slug: j-w-marceau
 section: old-town
 tags:
   - news
