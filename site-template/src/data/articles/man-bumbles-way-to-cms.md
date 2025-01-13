@@ -2,9 +2,9 @@
 slug: man-bumbles-way-to-cms
 title: Man bumbles way to CMS
 description: A halfwit finally got something working
-featuredImage: /images/3.jpg
-featuredImageAltText: Cat floating in space
-featuredImageCaption: Cat floating in space
+featuredImage: /images/Rocket_Laboratory_GPN-2000-000363.jpg
+featuredImageAltText: Man sat at an old fashioned computer terminal
+featuredImageCaption: Incredible!
 publicationDate: 2025-01-09T00:27:00.000Z
 authors:
   - slug: frederick-obrien

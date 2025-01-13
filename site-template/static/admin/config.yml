@@ -21,6 +21,7 @@ collections:
     create: true
     # slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     slug: "{{fields.slug}}"
+    sortable_fields: ["publicationDate", "title"]
     fields:
       - { label: "Slug", name: "slug", widget: "string", hint: "Sets the url e.g. yoursite.com/section/**your-slug-here**" }
       - { label: "Title", name: "title", widget: "string" }
