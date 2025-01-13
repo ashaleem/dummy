@@ -48,6 +48,14 @@
     </div>
   </article>
 
+  {#if article.authors && article.authors.length > 0}
+    <div class="author-link">
+      <a href={`/authors/${article.authors[0].slug}`}>
+        See more articles by {article.authors[0].name}
+      </a>
+    </div>
+  {/if}
+
   <!-- <Ad ad={data.ads.banner} /> -->
 
   <ArticleCardGrid heading="Related articles" articles={data.otherArticles} />
@@ -65,5 +73,8 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+  .author-link {
+    text-align: center;
   }
 </style>
