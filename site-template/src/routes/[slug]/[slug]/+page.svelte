@@ -32,9 +32,12 @@
   <article>
     <ArticleHead
       title={article.title}
-      description={article.description ? article.description : ""}
+      standfirst={article.description}
       publicationDate={article.publicationDate}
-      authors={article.authors}
+      authors={article.authors?.map((author) => ({
+        name: author.name,
+        link: `/authors/${author.slug}`,
+      }))}
     />
     {#if article.featuredImage && article.featuredImageAltText}
       <ArticleFeaturedImage
@@ -47,14 +50,6 @@
       {@html article.content}
     </div>
   </article>
-
-  {#if article.authors && article.authors.length > 0}
-    <div class="author-link">
-      <a href={`/authors/${article.authors[0].slug}`}>
-        See more articles by {article.authors[0].name}
-      </a>
-    </div>
-  {/if}
 
   <!-- <Ad ad={data.ads.banner} /> -->
 
@@ -73,8 +68,5 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
-  .author-link {
-    text-align: center;
   }
 </style>

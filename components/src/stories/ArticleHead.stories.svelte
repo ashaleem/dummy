@@ -8,12 +8,19 @@
 		tags: ['autodocs'],
 		args: {
 			title: 'Man bites dog',
-			description: 'Park goers were shocked to see a game of fetch go south',
+			standfirst: 'Park goers were shocked to see a game of fetch go south',
 			publicationDate: '2021-09-01',
 			authors: [
 				{
-					id: 'john-doe',
-					name: 'John Doe'
+					name: 'John Doe',
+					link: '/authors/john-doe'
+				},
+				{
+					name: 'Jane Doe',
+					link: '/authors/jane-doe'
+				},
+				{
+					name: 'John Smith'
 				}
 			]
 		}
