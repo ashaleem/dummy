@@ -1,0 +1,11 @@
+{
+    "emblemUrl": "/images/daily-news-emblem.jpg",
+    "yearFounded": 2016,
+    "faviconUrl": "/images/daily-news-emblem.jpg",
+    "supportLink": "https://example.com/support",
+    "name": "The Daily News",
+    "url": "https://example.com",
+    "logoUrl": "/images/daily-news-emblem.jpg",
+    "parentOrganization": "The News Company",
+    "description": "A publication about everything"
+}

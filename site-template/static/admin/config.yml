@@ -12,6 +12,22 @@ media_folder: "static/images"
 public_folder: "/images/"
 
 collections:
+  - name: "admin"
+    label: "Admin"
+    files:
+      - file: "src/data/site-details.json"
+        name: "site-details"
+        label: "Site details"
+        fields:
+          - { label: "Publication name", name: "name", widget: "string" }
+          - { label: "Parent organisation", name: "parentOrganization", widget: "string" }
+          - { label: "Descriptions", name: "description", widget: "string" }
+          - { label: "Year founded", name: "yearFounded", widget: "number" }
+          - { label: "URL", name: "url", widget: "string" }
+          - { label: "Support link", name: "supportLink", widget: "string" }
+          - { label: "Site logo", name: "logoUrl", widget: "image" }
+          - { label: "Site emblem", name: "emblemUrl", widget: "image" }
+          - { label: "Site favicon", name: "faviconUrl", widget: "image" }
   - name: "articles"
     label: "Articles"
     folder: "src/data/articles" 
