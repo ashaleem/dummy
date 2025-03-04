@@ -1,6 +1,6 @@
 // Temporary as a proof of concept before moving out of the template
 
-import type { Author, PublicationDetails } from "@gonzo-engineering/libs";
+import type { PublicationDetails } from "@gonzo-engineering/libs";
 
 export const PUBLICATION_DETAILS: PublicationDetails = {
   name: "The Daily News",
@@ -19,33 +19,23 @@ export const PUBLICATION_DETAILS: PublicationDetails = {
     { label: "New Town", slug: "new-town" },
     { label: "Business District", slug: "business-district" },
   ],
-  navigation: [
-    {
-      label: "Old Town",
-      url: "/old-town",
-      subNav: [
-        { label: "Council", url: "/tags/council" },
-        { label: "Planning", url: "/tags/planning" },
-      ],
-    },
-    { label: "New Town", url: "/new-town" },
-    {
-      label: "Business District",
-      url: "/business-district",
-      subNav: [{ label: "Culture", url: "/tags/culture" }],
-    },
-  ],
+  navigation: {
+    header: [
+      {
+        label: "Old Town",
+        url: "/old-town",
+        subNav: [
+          { label: "Council", url: "/tags/council" },
+          { label: "Planning", url: "/tags/planning" },
+        ],
+      },
+      { label: "New Town", url: "/new-town" },
+      {
+        label: "Business District",
+        url: "/business-district",
+        subNav: [{ label: "Culture", url: "/tags/culture" }],
+      },
+    ],
+    footer: [],
+  },
 };
-
-export const AUTHORS: Author[] = [
-  {
-    id: "j-w-marceau",
-    name: "J. W. Marceau",
-    bio: "J. W. Marceau means well.",
-  },
-  {
-    id: "tintin",
-    name: "Tintin",
-    bio: "Tintin is a reporter and adventurer.",
-  },
-];

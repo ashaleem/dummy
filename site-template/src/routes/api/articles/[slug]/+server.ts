@@ -1,19 +1,17 @@
-// import type { Author } from "$lib/types/index.js";
-import { AUTHORS } from "$lib/constants.js";
-import type { Article } from "$lib/types";
+import type { Article, Author } from "@gonzo-engineering/libs";
 import { json } from "@sveltejs/kit";
 import { render } from "svelte/server";
+import { allAuthors } from "../../../../data/authors/allAuthors";
 
 export async function GET({ params }) {
   try {
     const post = await import(`../../../../data/articles/${params.slug}.md`);
     const content = render(post.default).body;
-
-    // // Replace author IDs with author objects
+    // Replace author slugs with author objects
     const postsWithAuthorObjects: Article = {
       ...post.metadata,
-      authors: post.metadata.authorIds.map((authorId: string) => {
-        return AUTHORS.find((author) => author.id === authorId);
+      authors: post.metadata.authors.map((authorObject: Author) => {
+        return allAuthors.find((author) => author.slug === authorObject.slug);
       }),
       content,
     };

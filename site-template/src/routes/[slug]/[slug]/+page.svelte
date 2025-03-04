@@ -32,9 +32,12 @@
   <article>
     <ArticleHead
       title={article.title}
-      description={article.description}
+      standfirst={article.description}
       publicationDate={article.publicationDate}
-      authors={article.authors}
+      authors={article.authors?.map((author) => ({
+        name: author.name,
+        link: `/authors/${author.slug}`,
+      }))}
     />
     {#if article.featuredImage && article.featuredImageAltText}
       <ArticleFeaturedImage

@@ -1,29 +1,44 @@
 <script lang="ts">
 	import '$lib/styles/reset.css';
-	import { type Author, prettifyDate } from '@gonzo-engineering/libs';
+	import { prettifyDate } from '@gonzo-engineering/libs';
 
 	let {
 		title,
-		description,
+		standfirst,
 		publicationDate,
 		authors
 	}: {
 		title: string;
-		description: string;
+		standfirst?: string;
 		publicationDate: string;
-		authors?: Author[];
+		authors?: {
+			name: string;
+			link?: string;
+		}[];
 	} = $props();
 </script>
 
 <div class="article-header">
 	<h2>{title}</h2>
-	<div class="article-standfirst">
-		{description}
-	</div>
+	{#if standfirst}
+		<div class="article-standfirst">
+			{standfirst}
+		</div>
+	{/if}
 	<div class="details">
 		{#if authors}
 			<div class="byline">
-				By {authors.map((author) => author.name).join(', ')}
+				By {#each authors as author, i}
+					{#if author.link}
+						<a href={author.link}>{author.name}</a>
+					{:else}
+						{author.name}
+					{/if}{#if i < authors.length - 2 && authors.length > 1},
+					{/if}
+					{#if i === authors.length - 2}
+						and{' '}
+					{/if}
+				{/each}
 			</div>
 		{/if}
 		<div>{prettifyDate(publicationDate)}</div>
