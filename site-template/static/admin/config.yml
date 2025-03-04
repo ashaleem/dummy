@@ -28,6 +28,13 @@ collections:
           - { label: "Site logo", name: "logoUrl", widget: "image" }
           - { label: "Site emblem", name: "emblemUrl", widget: "image" }
           - { label: "Site favicon", name: "faviconUrl", widget: "image" }
+          - { label: "Sections", name: "sections", widget: "list", fields: [{ label: "Name", name: "label", widget: "string" }, { label: "Slug", name: "slug", widget: "string" }] }
+      - file: "src/data/navigation.json"
+        name: "navigation"
+        label: "Navigation"
+        fields:
+          - { label: "Header", name: "header", widget: "list", fields: [{ label: "Label", name: "label", widget: "string" }, { label: "URL", name: "url", widget: "string" }, { label: "Sub navigation", name: "subNav", widget: "list", fields: [{ label: "Label", name: "label", widget: "string" }, { label: "URL", name: "url", widget: "string" }] }] }
+          - { label: "Footer", name: "footer", widget: "list", fields: [{ label: "Label", name: "label", widget: "string" }, { label: "URL", name: "url", widget: "string" }] }
   - name: "articles"
     label: "Articles"
     folder: "src/data/articles" 
